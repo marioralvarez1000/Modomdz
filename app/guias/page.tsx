@@ -1,0 +1,2 @@
+import type { Metadata } from "next";import { ListingPage } from "@/lib/listing-page";import { content } from "@/lib/content";
+export const metadata:Metadata={title:"Guías útiles",description:"Transporte, clima, frontera y emergencias para moverte por Mendoza."};export default function Page(){return <ListingPage eyebrow="Datos que resuelven" title="Guías útiles" description="Información práctica para tomar mejores decisiones: transporte, aeropuerto, alta montaña, clima y asistencia. Sin copiar datos variables que pueden vencer." items={content.filter(x=>x.type==="guia")}/>}

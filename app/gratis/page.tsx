@@ -1,0 +1,2 @@
+import type { Metadata } from "next";import { ListingPage } from "@/lib/listing-page";import { content } from "@/lib/content";
+export const metadata:Metadata={title:"Qué hacer gratis en Mendoza",description:"Lugares, eventos y paseos gratuitos en Mendoza."};export default function Page(){return <ListingPage eyebrow="Cero entrada, mucho plan" title="Mendoza gratis" description="Espacios públicos y actividades sin entrada. Cuando un traslado, museo o servicio opcional sí cuesta, lo aclaramos en la ficha." items={content.filter(x=>x.free)}/>}

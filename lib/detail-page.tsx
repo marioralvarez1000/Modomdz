@@ -1,0 +1,22 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
+import { Calendar, CheckCircle2, ChevronRight, Clock3, MapPin, Ticket } from "lucide-react";
+import type { ContentItem } from "@/lib/content";
+import { ContentCard } from "@/components/content-card";
+import { DetailActions } from "@/components/detail-actions";
+import { PageTracker } from "@/components/page-tracker";
+import { SourceLink } from "@/components/source-link";
+import { LocationMap } from "@/components/location-map";
+import { relatedTo, visualFor } from "@/lib/content";
+
+function dateLabel(value?:string){if(!value)return null;return new Intl.DateTimeFormat("es-AR",{weekday:"long",day:"numeric",month:"long",hour:"2-digit",minute:"2-digit",timeZone:"America/Argentina/Mendoza"}).format(new Date(value));}
+
+export function DetailPage({item}:{item:ContentItem}){
+ const related=relatedTo(item),date=dateLabel(item.startsAt),visual=visualFor(item);
+ const pathType=item.type==="lugar"?"lugares":item.type==="guia"?"guias":item.type==="evento"?"agenda":"itinerarios";
+ const jsonLd=item.type==="evento"?{"@context":"https://schema.org","@type":"Event",name:item.title,description:item.summary,startDate:item.startsAt,endDate:item.endsAt,eventStatus:"https://schema.org/EventScheduled",isAccessibleForFree:item.free,location:{"@type":"Place",name:item.address||item.zone,address:{"@type":"PostalAddress",addressRegion:"Mendoza",addressCountry:"AR"}},url:`https://modomza.com.ar/agenda/${item.slug}`,organizer:{"@type":"Organization",name:item.sourceName,url:item.sourceUrl}}:{"@context":"https://schema.org","@type":item.type==="lugar"?"TouristAttraction":"Article",name:item.title,headline:item.title,description:item.summary,url:`https://modomza.com.ar/${pathType}/${item.slug}`};
+ return <main><PageTracker eventName="content_view" contentSlug={item.slug} category={item.category} zone={item.zone}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}/>
+  <section className="detail-hero shell"><nav className="breadcrumb"><a href="/">Inicio</a><ChevronRight size={12}/><span>{item.category}</span><ChevronRight size={12}/><span>{item.title}</span></nav><div className="detail-kicker"><span className="tag">{item.category}</span>{item.free&&<span className="tag free">Gratis</span>}{item.editorial&&<span className="tag editorial">Selección editorial</span>}{item.ageRestricted&&<span className="tag age">+18</span>}</div><h1>{item.title}</h1><p className="detail-summary">{item.summary}</p><div className="detail-image" role="img" aria-label={visual.alt} style={{backgroundImage:`linear-gradient(180deg,transparent 62%,rgba(3,29,36,.35)),url("${visual.src}")`}}/>{visual.credit&&<p className="image-credit">Foto: <a href={visual.source} target="_blank" rel="noreferrer">{visual.credit}</a></p>}</section>
+  <section className="shell detail-layout"><article>{item.ageRestricted&&<p className="alcohol-notice"><b>+18</b> Beber con moderación. Prohibida su venta a menores de 18 años.</p>}<div className="article-copy">{item.body.map(p=><p key={p}>{p}</p>)}</div><LocationMap item={item}/><div className="tips-box"><h2>Antes de ir</h2><ul>{item.tips.map(t=><li key={t}>{t}</li>)}</ul></div><div className="source-box">{item.editorial&&<><b>Ficha editorial independiente.</b> Este lugar no pagó por aparecer y su inclusión no implica una relación comercial con Modo MZA.<br/></>}<b>Información verificada el {item.verified}.</b><br/>Fuente: <SourceLink href={item.sourceUrl} slug={item.slug}>{item.sourceName}</SourceLink>. Si la fuente y esta ficha difieren, tomá como válida la fuente oficial. ¿Representás al lugar? Solicitá una actualización en <a href="mailto:contacto@modomza.com">contacto@modomza.com</a>.</div></article><aside className="detail-aside">{date&&<div className="fact"><Calendar size={19}/><span><b>Cuándo</b>{date}</span></div>}<div className="fact"><Ticket size={19}/><span><b>Costo</b>{item.cost}</span></div><div className="fact"><Clock3 size={19}/><span><b>Tiempo sugerido</b>{item.duration}</span></div><div className="fact"><MapPin size={19}/><span><b>Zona</b>{item.address||item.zone}</span></div><div className="fact"><CheckCircle2 size={19}/><span><b>Verificación editorial</b>{item.verified}</span></div><DetailActions item={item}/></aside></section>
+  <section className="related"><div className="shell"><span className="overline">Seguí explorando</span><h2>También te puede interesar</h2><div className="card-grid">{related.map(x=><ContentCard key={x.slug} item={x}/>)}</div></div></section>
+ </main>;
+}

@@ -1,0 +1,2 @@
+import type { Metadata } from "next";import { ListingPage } from "@/lib/listing-page";import { content } from "@/lib/content";
+export const metadata:Metadata={title:"Itinerarios por Mendoza",description:"Recorridos gratuitos y listos para hacer por Mendoza."};export default function Page(){return <ListingPage eyebrow="Menos planificación, más Mendoza" title="Recorridos listos" description="Circuitos editoriales armados con espacios públicos, tiempos realistas y alternativas para que puedas adaptarlos a tu día." items={content.filter(x=>x.type==="itinerario")}/>}

@@ -1,0 +1,3 @@
+"use client";/* eslint-disable @next/next/no-html-link-for-pages */
+import { Bookmark } from "lucide-react";import { content } from "@/lib/content";import { ContentCard } from "@/components/content-card";import { useSaved } from "@/components/saved-provider";
+export function SavedList(){const {saved}=useSaved();const items=saved.map(slug=>content.find(x=>x.slug===slug)).filter(Boolean) as typeof content;return items.length?<div className="card-grid">{items.map(x=><ContentCard key={x.slug} item={x}/>)}</div>:<div className="empty-state"><Bookmark/><h3>Todavía no tenés favoritos</h3><p>Usá el marcador de cada ficha para armar tu lista personal.</p><a href="/lugares">Explorar lugares</a></div>}
