@@ -26,7 +26,7 @@ export function SiteHeader({viewer}:{viewer:Viewer}) {
             <a href="/enviar-evento"><b>Enviar un evento</b><span>Proponelo para revisión editorial</span></a>
           </nav>
         </details>
-        <a href="/hoy" className="today-link"><MapPin size={16}/> Qué hacer hoy</a>
+        <a href="/hoy" className="today-link"><MapPin size={16}/> <span>Qué hacer hoy</span></a>
         <a href="/anunciar" className="business-link" aria-label="Sumá tu negocio a Modo MZA"><Store size={16}/> <span>Sumá tu negocio</span></a>
         <a href="/guardados" className="saved-link"><Bookmark size={17}/> <span>Favoritos</span>{saved.length>0&&<b className="saved-count">{saved.length}</b>}</a>
         <AccountMenu viewer={viewer}/>

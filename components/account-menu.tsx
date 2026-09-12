@@ -12,7 +12,7 @@ export function AccountMenu({viewer}:{viewer:Viewer}){
       {!viewer.profileComplete&&<a className="complete-profile-link" href="/registro"><UserRound size={17}/>Completar mi perfil</a>}
       <a href="/guardados"><Bookmark size={17}/>Mis favoritos</a>
       <a href="/cuenta"><CircleUserRound size={17}/>Mi cuenta</a>
-      <a href="/signout-with-chatgpt?return_to=%2F" target="_top"><LogOut size={17}/>Cerrar sesión</a>
+      <a href="/salir?return_to=%2F" target="_top"><LogOut size={17}/>Cerrar sesión</a>
     </div>
   </details>;
 }

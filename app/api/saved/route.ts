@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { and, desc, eq } from "drizzle-orm";
-import { getChatGPTUser } from "@/app/chatgpt-auth";
+import { getUser } from "@/lib/auth";
 import { getDb } from "@/db";
 import { savedPlaces, userActivity } from "@/db/schema";
 import { content } from "@/lib/content";
@@ -9,7 +9,7 @@ import { ensureUserProfile } from "@/lib/user-profile";
 const validSlugs = new Set(content.map((item) => item.slug));
 
 async function currentUser() {
-  const user = await getChatGPTUser();
+  const user = await getUser();
   if (!user) return null;
   await ensureUserProfile(user);
   return user;

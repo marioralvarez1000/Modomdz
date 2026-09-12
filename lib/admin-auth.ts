@@ -1,9 +1,9 @@
-import { getChatGPTUser } from "@/app/chatgpt-auth";
+import { getUser } from "@/lib/auth";
 
 export const ADMIN_EMAIL="gonzix@gmail.com";
 
 export async function isAdmin(){
-  const user=await getChatGPTUser();
+  const user=await getUser();
   return Boolean(user&&user.email.toLowerCase()===ADMIN_EMAIL);
 }
 

@@ -3,7 +3,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { SavedProvider } from "@/components/saved-provider";
-import { getChatGPTUser } from "@/app/chatgpt-auth";
+import { getUser } from "@/lib/auth";
 import { viewerFor } from "@/lib/user-profile";
 import { PrivacyConsent } from "@/components/privacy-consent";
 import { Toaster } from "@/components/ui/sonner";
@@ -40,7 +40,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const user=await getChatGPTUser();
+  const user=await getUser();
   const viewer=await viewerFor(user);
   return (
     <html lang="es">

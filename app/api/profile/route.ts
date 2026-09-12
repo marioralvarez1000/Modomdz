@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { eq } from "drizzle-orm";
-import { getChatGPTUser } from "@/app/chatgpt-auth";
+import { getUser } from "@/lib/auth";
 import { getDb } from "@/db";
 import { userProfiles } from "@/db/schema";
 import { ensureUserProfile, profileIsComplete } from "@/lib/user-profile";
@@ -8,7 +8,7 @@ import { ensureUserProfile, profileIsComplete } from "@/lib/user-profile";
 const clean = (value: unknown, max: number) => typeof value === "string" ? value.trim().replace(/\s+/g, " ").slice(0, max) : "";
 
 export async function GET() {
-  const user = await getChatGPTUser();
+  const user = await getUser();
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const profile = await ensureUserProfile(user);
   return NextResponse.json({
@@ -21,7 +21,7 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-  const user = await getChatGPTUser();
+  const user = await getUser();
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const body = await request.json().catch(() => ({})) as Record<string, unknown>;
   const firstName = clean(body.firstName, 80);
