@@ -17,6 +17,8 @@ export type ContentItem = {
   imageSource?: string;
   address?: string;
   mapUrl?: string;
+  lat?: number;
+  lng?: number;
   startsAt?: string;
   endsAt?: string;
   body: string[];
@@ -43,7 +45,7 @@ export const content: ContentItem[] = [
     summary: "Un gran punto de partida para caminar el centro, descansar bajo los árboles y conectar con las cuatro plazas satélite.",
     category: "Ciudad", zone: "Ciudad de Mendoza", free: true, cost: "Acceso libre", duration: "45–90 min", featured: true,
     image: cityImage, imageAlt: "Vista aérea del centro de Mendoza", imageCredit: "David · CC BY 2.0", imageSource: "https://commons.wikimedia.org/wiki/File:Downtown_Mendoza.jpg",
-    address: "Chile y Espejo, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Plaza+Independencia+Mendoza",
+    address: "Chile y Espejo, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Plaza+Independencia+Mendoza", lat: -32.8897243, lng: -68.8444983,
     body: ["Es la plaza principal de Mendoza y el centro del trazado de cinco plazas que caracteriza a la ciudad. Su explanada, sus senderos arbolados y la cercanía con la Peatonal Sarmiento la convierten en una primera parada simple y útil.", "Desde acá podés armar una caminata corta hacia Plaza España, Plaza Chile, Plaza Italia o Plaza San Martín. La actividad de la plaza cambia según el día: consultá siempre la agenda oficial antes de ir si buscás ferias o espectáculos."],
     tips: ["Ideal para comenzar un recorrido a pie por el microcentro.", "De noche, mantené las precauciones habituales de una zona urbana.", "Las actividades puntuales pueden cambiar por clima o programación."],
     sourceName: "Turismo Ciudad de Mendoza", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/", verified: "10 sep 2026"
@@ -53,7 +55,7 @@ export const content: ContentItem[] = [
     summary: "Senderos, lago, rosedal y grandes arboledas para caminar, pedalear o bajar un cambio sin salir de la ciudad.",
     category: "Naturaleza", zone: "Ciudad de Mendoza", free: true, cost: "Acceso libre", duration: "2–4 h", featured: true,
     image: monumentImage, imageAlt: "Monumento del Ejército de los Andes en el Cerro de la Gloria", imageCredit: "Bernard Gagnon · CC BY-SA 4.0", imageSource: "https://commons.wikimedia.org/wiki/File:Army_of_the_Andes_Monument,_Mendoza_01.jpg",
-    address: "Av. Emilio Civit, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Parque+General+San+Martin+Mendoza",
+    address: "Av. Emilio Civit, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Parque+General+San+Martin+Mendoza", lat: -32.8883526, lng: -68.8518154,
     body: ["Es uno de los espacios verdes más importantes de Mendoza. La entrada por los Portones del Parque abre un circuito amplio que incluye lago, rosedal, fuentes, clubes y senderos.", "No hace falta consumir ni contratar una excursión para disfrutarlo. Por su tamaño conviene elegir uno o dos sectores y llevar agua; el Cerro de la Gloria está dentro del área general, pero requiere un tramo adicional."],
     tips: ["Entrá por los Portones si es tu primera visita.", "Llevá agua y protección solar incluso en días frescos.", "Respetá ciclovías y sectores de circulación vehicular."],
     sourceName: "Turismo Ciudad de Mendoza", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/", verified: "10 sep 2026"
@@ -63,7 +65,7 @@ export const content: ContentItem[] = [
     summary: "El monumento al Ejército de los Andes y una panorámica abierta sobre la ciudad y el piedemonte.",
     category: "Historia", zone: "Ciudad de Mendoza", free: true, cost: "Acceso libre al espacio público", duration: "60–90 min",
     image: monumentImage, imageAlt: "Monumento del Ejército de los Andes", imageCredit: "Bernard Gagnon · CC BY-SA 4.0", imageSource: "https://commons.wikimedia.org/wiki/File:Army_of_the_Andes_Monument,_Mendoza_01.jpg",
-    address: "Cerro de la Gloria, Parque General San Martín", mapUrl: "https://www.google.com/maps/search/?api=1&query=Cerro+de+la+Gloria+Mendoza",
+    address: "Cerro de la Gloria, Parque General San Martín", mapUrl: "https://www.google.com/maps/search/?api=1&query=Cerro+de+la+Gloria+Mendoza", lat: -32.8889347, lng: -68.8912213,
     body: ["En la cima se encuentra el gran monumento dedicado a la gesta sanmartiniana. El recorrido permite leer la obra escultórica por partes y entender su relación con el cruce de los Andes.", "Se puede llegar en vehículo, transporte público o combinando caminata con el parque. La subida y el calor cambian mucho la experiencia, por eso es mejor evitar el mediodía en jornadas cálidas."],
     tips: ["Elegí mañana o última hora para una luz más amable.", "Confirmá accesos y transporte el mismo día.", "No subestimes el sol ni la pendiente."],
     sourceName: "Turismo Ciudad de Mendoza", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/", verified: "10 sep 2026"
@@ -72,7 +74,7 @@ export const content: ContentItem[] = [
     type: "lugar", slug: "area-fundacional", title: "Área Fundacional", eyebrow: "Donde empezó Mendoza",
     summary: "Plaza Pedro del Castillo, ruinas de San Francisco y el entorno histórico de la primera ciudad.",
     category: "Historia", zone: "Ciudad de Mendoza", free: true, cost: "Espacio público libre; museos pueden cobrar", duration: "60–120 min",
-    address: "Plaza Pedro del Castillo, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Area+Fundacional+Mendoza",
+    address: "Plaza Pedro del Castillo, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Area+Fundacional+Mendoza", lat: -32.8797467, lng: -68.8288413,
     body: ["El sector reúne los rastros urbanos de la Mendoza anterior al terremoto de 1861. La plaza y el exterior de las ruinas permiten una visita autoguiada, mientras que los espacios museísticos cercanos suman contexto.", "La gratuidad indicada corresponde al paseo por el espacio público. Verificá tarifas y horarios en la fuente oficial si querés entrar al Museo del Área Fundacional."],
     tips: ["Combiná la plaza con las ruinas de San Francisco.", "El museo tiene condiciones propias: revisalas antes de salir.", "Es un buen complemento para entender el diseño de la ciudad nueva."],
     sourceName: "Turismo Ciudad de Mendoza", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/", verified: "10 sep 2026"
@@ -81,7 +83,7 @@ export const content: ContentItem[] = [
     type: "lugar", slug: "plaza-espana", title: "Plaza España", eyebrow: "Azulejos y sombra",
     summary: "Una de las plazas más singulares del centro, con mayólicas, bancos y escenas inspiradas en la cultura española.",
     category: "Ciudad", zone: "Ciudad de Mendoza", free: true, cost: "Acceso libre", duration: "30–45 min",
-    address: "España y Montevideo, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Plaza+Espana+Mendoza",
+    address: "España y Montevideo, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Plaza+Espana+Mendoza", lat: -32.8929598, lng: -68.8420275,
     body: ["Forma parte del sistema de plazas que rodea Plaza Independencia. Su identidad está marcada por las fuentes, los bancos y los paños de azulejos decorativos.", "Funciona mejor como parte de una caminata por el centro que como visita aislada. Según el calendario puede albergar actividades; chequeá la agenda municipal."],
     tips: ["Sumala al circuito Plaza Independencia–Peatonal.", "La mañana suele ser más tranquila para observar detalles.", "No damos por confirmadas ferias sin publicación oficial vigente."],
     sourceName: "Turismo Ciudad de Mendoza", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/", verified: "10 sep 2026"
@@ -90,7 +92,7 @@ export const content: ContentItem[] = [
     type: "lugar", slug: "peatonal-sarmiento", title: "Peatonal Sarmiento", eyebrow: "Paseo central",
     summary: "Tres cuadras peatonales para unir Plaza Independencia con avenida San Martín bajo la arboleda urbana.",
     category: "Ciudad", zone: "Ciudad de Mendoza", free: true, cost: "Acceso libre", duration: "20–45 min",
-    address: "Sarmiento, entre Chile y San Martín", mapUrl: "https://www.google.com/maps/search/?api=1&query=Peatonal+Sarmiento+Mendoza",
+    address: "Sarmiento, entre Chile y San Martín", mapUrl: "https://www.google.com/maps/search/?api=1&query=Peatonal+Sarmiento+Mendoza", lat: -32.8905328, lng: -68.8400658,
     body: ["Es uno de los corredores más transitados del microcentro y una conexión natural entre la plaza principal y la avenida San Martín. La gracia está en caminarla y mirar la vida cotidiana de la ciudad.", "Los consumos de cafés y comercios son opcionales: el paseo en sí es público y gratuito."],
     tips: ["Usala como eje para orientarte en el centro.", "En horarios comerciales tiene más movimiento.", "Cuidá tus pertenencias como en cualquier corredor concurrido."],
     sourceName: "Turismo Ciudad de Mendoza", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/", verified: "10 sep 2026"
@@ -99,7 +101,7 @@ export const content: ContentItem[] = [
     type: "lugar", slug: "parque-central", title: "Parque Central y Nave Cultural", eyebrow: "Ciudad contemporánea",
     summary: "Un parque abierto para caminar y descansar junto a uno de los polos culturales más activos de la capital.",
     category: "Cultura", zone: "Ciudad de Mendoza", free: true, cost: "Parque libre; cada actividad informa su entrada", duration: "45–120 min",
-    address: "Av. España y Maza, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Parque+Central+Nave+Cultural+Mendoza",
+    address: "Av. España y Maza, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Parque+Central+Nave+Cultural+Mendoza", lat: -32.8860200, lng: -68.8420198,
     body: ["El Parque Central ofrece una gran superficie verde, lago, senderos y espacios de descanso. En uno de sus bordes funciona la Nave Cultural, con programación de artes escénicas, música, cine y ferias.", "El parque es de acceso libre. Para eventos de la Nave consultá cada ficha oficial: algunos son gratuitos y otros requieren entrada."],
     tips: ["Revisá la cartelera de la Nave antes de ir.", "El parque es un buen plan aun sin evento.", "No confundas acceso libre al parque con gratuidad de toda la programación."],
     sourceName: "Nave Cultural · Ciudad de Mendoza", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/nave-cultural.html", verified: "10 sep 2026"
@@ -108,7 +110,7 @@ export const content: ContentItem[] = [
     type: "lugar", slug: "parque-civico", title: "Parque Cívico", eyebrow: "Arquitectura y memoria",
     summary: "Un paseo abierto entre edificios públicos, jardines y el Memorial de la Bandera de los Andes.",
     category: "Historia", zone: "Ciudad de Mendoza", free: true, cost: "Parque de acceso libre", duration: "45–75 min",
-    address: "Peltier y Virgen del Carmen de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Parque+Civico+Mendoza",
+    address: "Peltier y Virgen del Carmen de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Parque+Civico+Mendoza", lat: -32.8978107, lng: -68.8471504,
     body: ["El conjunto cívico reúne la Casa de Gobierno y amplios jardines, a pocas cuadras del centro. El paseo exterior permite leer otra etapa de la arquitectura mendocina.", "El Memorial de la Bandera tiene horarios propios. Verificá la información oficial si tu objetivo principal es ingresar."],
     tips: ["Funciona bien como desvío desde Plaza España.", "Consultá horarios del Memorial antes de planificar la visita.", "El paseo exterior es breve y completamente caminable."],
     sourceName: "Gobierno de Mendoza", sourceUrl: "https://www.mendoza.gov.ar/", verified: "10 sep 2026"
@@ -118,7 +120,7 @@ export const content: ContentItem[] = [
     summary: "Paisaje de cordillera alrededor del embalse: miradores, aire abierto y una salida que cambia con el clima.",
     category: "Montaña", zone: "Luján de Cuyo", free: true, cost: "Miradores públicos sin entrada; traslado y actividades aparte", duration: "Medio día", featured: true,
     image: mountainImage, imageAlt: "Embalse Potrerillos y cordillera", imageCredit: "Uliaparicio · CC BY-SA 3.0", imageSource: "https://commons.wikimedia.org/wiki/File:Dique_Potrerillos.jpg",
-    address: "Embalse Potrerillos, Luján de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Dique+Potrerillos+Mendoza",
+    address: "Embalse Potrerillos, Luján de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Dique+Potrerillos+Mendoza", lat: -32.9648576, lng: -69.1718663,
     body: ["El embalse y su entorno forman una de las postales más accesibles de la precordillera. Es posible disfrutar miradores y sectores públicos sin contratar una actividad.", "El traslado, estacionamiento privado, gastronomía o deportes de aventura pueden tener costo. En montaña el viento y la temperatura cambian rápido: revisá el pronóstico y el estado de rutas."],
     tips: ["No ingreses al agua en sectores no habilitados.", "Llevá abrigo incluso con sol en la ciudad.", "Regresá con tus residuos y respetá señalización local."],
     sourceName: "Turismo Mendoza", sourceUrl: "https://www.mendoza.gov.ar/turismo/", verified: "10 sep 2026"
@@ -127,7 +129,7 @@ export const content: ContentItem[] = [
     type: "lugar", slug: "plaza-de-chacras-de-coria", title: "Plaza de Chacras de Coria", eyebrow: "Ritmo de pueblo",
     summary: "Una pausa arbolada en el centro de Chacras para caminar sus calles y conocer otra escala del Gran Mendoza.",
     category: "Barrios", zone: "Luján de Cuyo", free: true, cost: "Acceso libre", duration: "60–120 min",
-    address: "Italia y Mazzolari, Chacras de Coria", mapUrl: "https://www.google.com/maps/search/?api=1&query=Plaza+General+Espejo+Chacras+de+Coria",
+    address: "Italia y Mazzolari, Chacras de Coria", mapUrl: "https://www.google.com/maps/search/?api=1&query=Plaza+General+Espejo+Chacras+de+Coria", lat: -32.9863935, lng: -68.8821388,
     body: ["La plaza General Espejo organiza el pequeño centro de Chacras de Coria. El plan gratuito es caminar el entorno, observar la arboleda y recorrer las calles cercanas sin necesidad de reservar nada.", "Ferias y actividades varían: solo las consideramos confirmadas cuando existe una publicación oficial vigente."],
     tips: ["Combiná transporte público o vehículo y verificá frecuencias de regreso.", "La visita se disfruta más sin apuro.", "Los consumos y visitas privadas del entorno son opcionales."],
     sourceName: "Turismo Luján de Cuyo", sourceUrl: "https://lujandecuyo.gob.ar/", verified: "10 sep 2026"
@@ -137,7 +139,7 @@ export const content: ContentItem[] = [
     summary: "Una visita en Agrelo para conocer una de las bodegas mendocinas de mayor reconocimiento internacional.",
     category: "Bodegas", zone: "Agrelo · Luján de Cuyo", free: false, cost: "Experiencias pagas · reserva previa", duration: "2–3 h", featured: true, editorial: true, ageRestricted: true,
     image: wineryImage, imageAlt: "Viñedos mendocinos frente a la Cordillera de los Andes",
-    address: "Bodega Catena Zapata, Agrelo, Luján de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodega+Catena+Zapata+Agrelo+Mendoza",
+    address: "Bodega Catena Zapata, Agrelo, Luján de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodega+Catena+Zapata+Agrelo+Mendoza", lat: -33.1639614, lng: -68.9193917,
     body: ["La bodega de Agrelo combina una propuesta enológica con un edificio de fuerte identidad visual. Es una alternativa especialmente atractiva para quienes quieren concentrar vino, paisaje y arquitectura en una misma salida.", "Las modalidades de visita, disponibilidad y valores pueden cambiar. Modo MZA no vende esta experiencia: consultá y reservá únicamente desde los canales oficiales."],
     tips: ["Reservá antes de viajar a Agrelo.", "Verificá qué incluye cada experiencia.", "Si vas a degustar, coordiná un traslado y no conduzcas."],
     sourceName: "Catena Zapata · sitio oficial", sourceUrl: "https://catenazapata.com/", verified: "11 sep 2026"
@@ -157,7 +159,7 @@ export const content: ContentItem[] = [
     summary: "Una experiencia de Valle de Uco que suma bodega, paisaje y un espacio cultural dedicado al arte.",
     category: "Bodegas", zone: "Los Árboles · Tunuyán", free: false, cost: "Actividades pagas · consultar acceso a Killka", duration: "3–5 h", editorial: true, ageRestricted: true,
     image: wineryImage, imageAlt: "Viñedos mendocinos frente a la Cordillera de los Andes",
-    address: "Bodegas Salentein, Los Árboles, Tunuyán", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodegas+Salentein+Los+Arboles+Tunuyan",
+    address: "Bodegas Salentein, Los Árboles, Tunuyán", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodegas+Salentein+Los+Arboles+Tunuyan", lat: -33.4984651, lng: -69.2521467,
     body: ["Salentein permite combinar en un mismo destino el universo del vino con Killka, su espacio cultural. Es una buena elección para grupos con intereses distintos o para dedicar varias horas a una sola parada del Valle de Uco.", "La programación, los tipos de visita y las condiciones de ingreso se actualizan en los canales de la bodega. Revisalos antes de salir."],
     tips: ["Reservá la experiencia de bodega con anticipación.", "Consultá si Killka requiere entrada o reserva el día elegido.", "Planificá un conductor designado o traslado contratado."],
     sourceName: "Bodegas Salentein · sitio oficial", sourceUrl: "https://www.bodegassalentein.com/", verified: "11 sep 2026"
@@ -167,7 +169,7 @@ export const content: ContentItem[] = [
     summary: "Viñedos, jardines, cava histórica y distintas experiencias enológicas a pocos kilómetros de la ciudad.",
     category: "Bodegas", zone: "Perdriel · Luján de Cuyo", free: false, cost: "Experiencias pagas · reserva online", duration: "2–4 h", editorial: true, ageRestricted: true,
     image: wineryImage, imageAlt: "Viñedos mendocinos frente a la Cordillera de los Andes",
-    address: "Ruta Provincial 15 km 23,5, Perdriel", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodega+Norton+Perdriel+Mendoza",
+    address: "Ruta Provincial 15 km 23,5, Perdriel", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodega+Norton+Perdriel+Mendoza", lat: -33.0868932, lng: -68.8911946,
     body: ["Norton reúne recorridos por viñedos, instalaciones y cava histórica, además de propuestas gastronómicas. La variedad de formatos permite elegir entre una visita breve o una experiencia más extensa.", "La propia bodega informa que las reservas turísticas se gestionan online. Revisá inclusiones, horarios y disponibilidad antes de trasladarte."],
     tips: ["La reserva se gestiona desde el canal oficial.", "El restaurante tiene horarios y cupos propios.", "No conduzcas si vas a consumir alcohol."],
     sourceName: "Bodega Norton · turismo oficial", sourceUrl: "https://www.norton.com.ar/turismo/", verified: "11 sep 2026"
@@ -177,7 +179,7 @@ export const content: ContentItem[] = [
     summary: "Una bodega histórica de Maipú con propuestas de visita y gastronomía vinculadas al vino.",
     category: "Bodegas", zone: "Coquimbito · Maipú", free: false, cost: "Experiencias pagas · reserva previa", duration: "2–4 h", editorial: true, ageRestricted: true,
     image: wineryImage, imageAlt: "Viñedos mendocinos frente a la Cordillera de los Andes",
-    address: "Bodega Trapiche, Nueva Mayorga, Maipú", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodega+Trapiche+Maipu+Mendoza",
+    address: "Bodega Trapiche, Nueva Mayorga, Maipú", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodega+Trapiche+Maipu+Mendoza", lat: -32.9725242, lng: -68.7469505,
     body: ["La visita propone acercarse a la tradición vitivinícola de Maipú dentro de un conjunto histórico restaurado. Puede combinarse con otros atractivos del departamento si organizás el día por zonas.", "Modo MZA no reproduce tarifas ni horarios porque pueden modificarse. Confirmalos en el sitio oficial y asegurá tu lugar antes de ir."],
     tips: ["Organizá el recorrido por Maipú para reducir traslados.", "Confirmá si tu reserva incluye degustación o comida.", "Usá transporte seguro si vas a beber."],
     sourceName: "Trapiche · sitio oficial", sourceUrl: "https://trapiche.com.ar/", verified: "11 sep 2026"
@@ -187,7 +189,7 @@ export const content: ContentItem[] = [
     summary: "Una bodega de Luján de Cuyo donde la visita enológica puede combinarse con gastronomía entre jardines.",
     category: "Bodegas", zone: "Mayor Drummond · Luján de Cuyo", free: false, cost: "Experiencias pagas · reserva previa", duration: "2–4 h", editorial: true, ageRestricted: true,
     image: wineryImage, imageAlt: "Viñedos mendocinos frente a la Cordillera de los Andes",
-    address: "Bodega Lagarde, Mayor Drummond, Luján de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodega+Lagarde+Mayor+Drummond+Mendoza",
+    address: "Bodega Lagarde, Mayor Drummond, Luján de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodega+Lagarde+Mayor+Drummond+Mendoza", lat: -33.0231566, lng: -68.8733178,
     body: ["Lagarde es una alternativa próxima a la ciudad para combinar patrimonio bodeguero, viñedos y una propuesta gastronómica dentro de la finca. La experiencia cambia según el formato contratado.", "Consultá disponibilidad y condiciones en los canales oficiales. La inclusión en Modo MZA es editorial y no implica un acuerdo comercial."],
     tips: ["Reservá visita y restaurante por separado si corresponde.", "Confirmá el punto exacto de ingreso.", "Coordiná traslado si elegís degustación."],
     sourceName: "Bodega Lagarde · sitio oficial", sourceUrl: "https://www.lagarde.com.ar/", verified: "11 sep 2026"
@@ -197,7 +199,7 @@ export const content: ContentItem[] = [
     summary: "Experiencias de vino y cocina en Agrelo, dentro de una bodega argentina liderada por una referente de la enología.",
     category: "Bodegas", zone: "Agrelo · Luján de Cuyo", free: false, cost: "Experiencias pagas · reserva previa", duration: "2–4 h", editorial: true, ageRestricted: true,
     image: wineryImage, imageAlt: "Viñedos mendocinos frente a la Cordillera de los Andes",
-    address: "Susana Balbo Wines, Agrelo, Luján de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Susana+Balbo+Wines+Agrelo+Mendoza",
+    address: "Susana Balbo Wines, Agrelo, Luján de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Susana+Balbo+Wines+Agrelo+Mendoza", lat: -33.1287155, lng: -68.8998027,
     body: ["La propuesta turística de Susana Balbo Wines se desarrolla en Agrelo y combina conocimiento enológico con experiencias de gastronomía y degustación. Es una parada sencilla de integrar a un circuito por Luján de Cuyo.", "Revisá en la fuente oficial qué opciones están disponibles para tu fecha y cuáles requieren reserva anticipada."],
     tips: ["Elegí la experiencia antes de coordinar el traslado.", "Avisá restricciones alimentarias al reservar.", "No conduzcas después de beber alcohol."],
     sourceName: "Susana Balbo Wines · sitio oficial", sourceUrl: "https://www.susanabalbowines.com.ar/", verified: "11 sep 2026"
@@ -207,7 +209,7 @@ export const content: ContentItem[] = [
     summary: "Una experiencia en Maipú que acerca vino, finca y cocina regional en un entorno rural.",
     category: "Bodegas", zone: "Maipú", free: false, cost: "Experiencias pagas · reserva previa", duration: "3–5 h", editorial: true, ageRestricted: true,
     image: wineryImage, imageAlt: "Viñedos mendocinos frente a la Cordillera de los Andes",
-    address: "Casa del Visitante Santa Julia, Maipú, Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Casa+del+Visitante+Santa+Julia+Maipu",
+    address: "Casa del Visitante Santa Julia, Maipú, Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Casa+del+Visitante+Santa+Julia+Maipu", lat: -32.9240220, lng: -68.5573400,
     body: ["Casa del Visitante es una opción para quienes quieren sumar cocina regional a un recorrido por el mundo del vino en Maipú. Por la duración de las propuestas, conviene dejar suficiente margen en el itinerario.", "Las actividades, menús y cupos se confirman directamente con la organización. No publicamos precios sin vigencia garantizada."],
     tips: ["Informá restricciones alimentarias al reservar.", "Confirmá duración antes de sumar otra bodega.", "Elegí un traslado seguro para el regreso."],
     sourceName: "Santa Julia · sitio oficial", sourceUrl: "https://www.santajulia.com.ar/", verified: "11 sep 2026"
@@ -217,7 +219,7 @@ export const content: ContentItem[] = [
     summary: "Una parada de Agrelo orientada a experiencias de degustación y gastronomía con vista al paisaje vitivinícola.",
     category: "Bodegas", zone: "Agrelo · Luján de Cuyo", free: false, cost: "Experiencias pagas · reserva previa", duration: "3–5 h", editorial: true, ageRestricted: true,
     image: wineryImage, imageAlt: "Viñedos mendocinos frente a la Cordillera de los Andes",
-    address: "Bodega Ruca Malen, Agrelo, Luján de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodega+Ruca+Malen+Agrelo+Mendoza",
+    address: "Bodega Ruca Malen, Agrelo, Luján de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodega+Ruca+Malen+Agrelo+Mendoza", lat: -33.0943161, lng: -68.9289154,
     body: ["Ruca Malen propone una experiencia de finca en Agrelo donde el vino y la cocina ocupan el centro. Funciona especialmente bien como parada principal de una jornada por Luján de Cuyo.", "Los formatos disponibles pueden variar según la temporada. Confirmá reserva, menú y condiciones desde el sitio oficial."],
     tips: ["No planifiques otra comida importante el mismo día.", "Consultá adaptaciones del menú antes de reservar.", "Contratá traslado si vas a degustar."],
     sourceName: "Ruca Malen · sitio oficial", sourceUrl: "https://www.rucamalen.com/", verified: "11 sep 2026"
@@ -227,7 +229,7 @@ export const content: ContentItem[] = [
     summary: "Una visita centrada en el mundo de los espumosos, con experiencias y gastronomía en Luján de Cuyo.",
     category: "Bodegas", zone: "Agrelo · Luján de Cuyo", free: false, cost: "Experiencias pagas · reserva previa", duration: "2–4 h", editorial: true, ageRestricted: true,
     image: wineryImage, imageAlt: "Viñedos mendocinos frente a la Cordillera de los Andes",
-    address: "Bodega Chandon, Agrelo, Luján de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodega+Chandon+Agrelo+Mendoza",
+    address: "Bodega Chandon, Agrelo, Luján de Cuyo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bodega+Chandon+Agrelo+Mendoza", lat: -33.1389354, lng: -68.8892323,
     body: ["La propuesta de Chandon permite enfocar una visita en la elaboración y degustación de espumosos. Su ubicación en Agrelo facilita combinarla con otras paradas de Luján de Cuyo.", "Verificá las experiencias habilitadas, edades admitidas y disponibilidad en el sitio oficial antes de organizar el traslado."],
     tips: ["Reservá con anticipación.", "Confirmá si la experiencia elegida incluye gastronomía.", "No conduzcas después de consumir alcohol."],
     sourceName: "Chandon Argentina · sitio oficial", sourceUrl: "https://www.chandon.com.ar/", verified: "11 sep 2026"
@@ -237,7 +239,7 @@ export const content: ContentItem[] = [
     summary: "Una experiencia gastronómica entre viñedos en Chachingo, pensada para dedicarle varias horas.",
     category: "Restaurantes", zone: "Chachingo · Maipú", free: false, cost: "Menús y experiencias pagas · reserva previa", duration: "3–5 h", featured: true, editorial: true, ageRestricted: true,
     image: foodImage, imageAlt: "Mesa mendocina al aire libre con cocina regional",
-    address: "Casa Vigil El Enemigo, Chachingo, Maipú", mapUrl: "https://www.google.com/maps/search/?api=1&query=Casa+Vigil+El+Enemigo+Chachingo+Mendoza",
+    address: "Casa Vigil El Enemigo, Chachingo, Maipú", mapUrl: "https://www.google.com/maps/search/?api=1&query=Casa+Vigil+El+Enemigo+Chachingo+Mendoza", lat: -33.0447614, lng: -68.7241318,
     body: ["Casa Vigil integra gastronomía, vino y una puesta artística dentro de un entorno de finca. Es una salida en sí misma, más que una parada rápida, por lo que conviene reservarle buena parte del día.", "Los menús, horarios y modalidades se consultan en los canales oficiales. Esta ficha es una selección editorial sin relación comercial."],
     tips: ["Reservá con anticipación.", "Avisá alergias o restricciones alimentarias.", "Organizá un traslado si vas a tomar vino."],
     sourceName: "Casa Vigil · sitio oficial", sourceUrl: "https://casavigil.com/", verified: "11 sep 2026"
@@ -247,7 +249,7 @@ export const content: ContentItem[] = [
     summary: "El restaurante de Bodega Los Toneles combina cocina argentina contemporánea con un edificio patrimonial.",
     category: "Restaurantes", zone: "Godoy Cruz", free: false, cost: "Consumo pago · reserva recomendada", duration: "2–3 h", editorial: true, ageRestricted: true,
     image: foodImage, imageAlt: "Mesa mendocina al aire libre con cocina regional",
-    address: "Abrasado, Bodega Los Toneles, Godoy Cruz", mapUrl: "https://www.google.com/maps/search/?api=1&query=Abrasado+Bodega+Los+Toneles+Godoy+Cruz",
+    address: "Abrasado, Bodega Los Toneles, Godoy Cruz", mapUrl: "https://www.google.com/maps/search/?api=1&query=Abrasado+Bodega+Los+Toneles+Godoy+Cruz", lat: -32.9352927, lng: -68.8745303,
     body: ["Abrasado funciona dentro de Bodega Los Toneles y ofrece una alternativa enoturística muy cercana al centro. Es útil para quienes buscan cocina y vino sin dedicar una jornada completa a zonas más alejadas.", "Consultá horarios, carta y disponibilidad en el canal oficial del establecimiento."],
     tips: ["La reserva es especialmente conveniente para almuerzos de fin de semana.", "Confirmá si querés sumar una actividad de bodega.", "No conduzcas después de consumir alcohol."],
     sourceName: "Bodega Los Toneles · sitio oficial", sourceUrl: "https://www.lostoneles.com/", verified: "11 sep 2026"
@@ -257,7 +259,7 @@ export const content: ContentItem[] = [
     summary: "Un restaurante de Ciudad para probar una mirada contemporánea sobre productos y vinos de Mendoza.",
     category: "Restaurantes", zone: "Ciudad de Mendoza", free: false, cost: "Consumo pago · reserva recomendada", duration: "2–3 h", editorial: true, ageRestricted: true,
     image: foodImage, imageAlt: "Mesa mendocina al aire libre con cocina regional",
-    address: "Azafrán, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Azafran+Restaurante+Mendoza",
+    address: "Azafrán, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Azafran+Restaurante+Mendoza", lat: -32.8887461, lng: -68.8489577,
     body: ["Azafrán es una alternativa céntrica para una comida enfocada en productos regionales y vinos mendocinos. Su ubicación permite integrarlo con un paseo por Plaza Independencia y la avenida Sarmiento.", "Carta, formato de servicio y disponibilidad pueden cambiar. Confirmalos en sus canales oficiales."],
     tips: ["Reservá si buscás un horario específico.", "Consultá opciones para restricciones alimentarias.", "Combiná la salida con un recorrido a pie por el centro."],
     sourceName: "Azafrán · canal oficial", sourceUrl: "https://www.instagram.com/azafranresto/", verified: "11 sep 2026"
@@ -267,7 +269,7 @@ export const content: ContentItem[] = [
     summary: "Una propuesta céntrica inspirada en la mesa familiar y en platos argentinos de porciones generosas.",
     category: "Restaurantes", zone: "Ciudad de Mendoza", free: false, cost: "Consumo pago · reserva recomendada", duration: "90–150 min", editorial: true,
     image: foodImage, imageAlt: "Mesa mendocina al aire libre con cocina regional",
-    address: "Fuente y Fonda, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Fuente+y+Fonda+Mendoza",
+    address: "Fuente y Fonda, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Fuente+y+Fonda+Mendoza", lat: -32.8911302, lng: -68.8485107,
     body: ["Fuente y Fonda propone una experiencia informal, de platos argentinos y espíritu de mesa compartida. Es una opción práctica para comer en la ciudad sin salir del circuito céntrico.", "Consultá carta, horarios y reservas directamente con el restaurante. Modo MZA no reproduce promociones sin confirmación vigente."],
     tips: ["Preguntá el tamaño de los platos si van a compartir.", "Reservá para grupos.", "Verificá el horario del día antes de ir."],
     sourceName: "Fuente y Fonda · canal oficial", sourceUrl: "https://www.instagram.com/fuenteyfondamendoza/", verified: "11 sep 2026"
@@ -277,7 +279,7 @@ export const content: ContentItem[] = [
     summary: "Un bistró urbano con jardín, apropiado para una comida tranquila dentro de la Ciudad de Mendoza.",
     category: "Restaurantes", zone: "Ciudad de Mendoza", free: false, cost: "Consumo pago · reserva recomendada", duration: "90–150 min", editorial: true,
     image: foodImage, imageAlt: "Mesa mendocina al aire libre con cocina regional",
-    address: "Anna Bistró, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Anna+Bistro+Mendoza",
+    address: "Anna Bistró, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Anna+Bistro+Mendoza", lat: -32.8838418, lng: -68.8510985,
     body: ["Anna Bistró se distingue por su ambiente de jardín dentro de la ciudad. Puede funcionar para almuerzo, café o cena según la programación y el horario vigente.", "Confirmá servicio, carta y disponibilidad desde el canal oficial, especialmente si tu interés principal es ocupar una mesa exterior."],
     tips: ["Pedí mesa exterior al reservar si es tu prioridad.", "Revisá el horario vigente.", "La experiencia puede variar con el clima."],
     sourceName: "Anna Bistró · canal oficial", sourceUrl: "https://www.instagram.com/annabistromendoza/", verified: "11 sep 2026"
@@ -287,7 +289,7 @@ export const content: ContentItem[] = [
     summary: "Un clásico familiar de cocina italiana ligado a la historia gastronómica de Mendoza.",
     category: "Restaurantes", zone: "Ciudad de Mendoza", free: false, cost: "Consumo pago · reserva recomendada", duration: "90–150 min", editorial: true,
     image: foodImage, imageAlt: "Mesa mendocina al aire libre con cocina regional",
-    address: "La Marchigiana, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=La+Marchigiana+Mendoza",
+    address: "La Marchigiana, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=La+Marchigiana+Mendoza", lat: -32.9544251, lng: -68.8580028,
     body: ["La Marchigiana representa una parte de la tradición italiana incorporada a la identidad culinaria mendocina. Es una opción para quienes priorizan pastas y recetas familiares dentro de la ciudad.", "Consultá la sucursal, horarios y reservas en la fuente oficial antes de trasladarte."],
     tips: ["Verificá la sucursal elegida al reservar.", "Consultá alternativas para necesidades alimentarias.", "En horarios de alta demanda conviene reservar."],
     sourceName: "La Marchigiana · sitio oficial", sourceUrl: "https://lamarchigiana.com.ar/", verified: "11 sep 2026"
@@ -297,7 +299,7 @@ export const content: ContentItem[] = [
     summary: "Una propuesta gastronómica de Godoy Cruz asociada a la cocina argentina y la identidad del vino mendocino.",
     category: "Restaurantes", zone: "Godoy Cruz", free: false, cost: "Consumo pago · reserva previa", duration: "2–3 h", editorial: true, ageRestricted: true,
     image: foodImage, imageAlt: "Mesa mendocina al aire libre con cocina regional",
-    address: "1884 Restaurante, Godoy Cruz, Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=1884+Restaurante+Mendoza",
+    address: "1884 Restaurante, Godoy Cruz, Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=1884+Restaurante+Mendoza", lat: -32.9126043, lng: -68.8425943,
     body: ["1884 es una referencia de cocina argentina contemporánea en Godoy Cruz, con protagonismo del fuego y una carta vinculada al vino. Por su formato conviene planificarla como comida principal del día.", "Verificá apertura, disponibilidad y condiciones de reserva en sus canales oficiales antes de organizar la visita."],
     tips: ["Reservá con anticipación.", "Informá restricciones alimentarias.", "Coordiná transporte si vas a consumir vino."],
     sourceName: "1884 Restaurante · canal oficial", sourceUrl: "https://www.instagram.com/1884restaurante/", verified: "11 sep 2026"
@@ -307,7 +309,7 @@ export const content: ContentItem[] = [
     summary: "Una opción urbana para desayunar, merendar o hacer una pausa durante un recorrido por la ciudad.",
     category: "Cafés", zone: "Ciudad de Mendoza", free: false, cost: "Consumo pago", duration: "45–90 min", editorial: true,
     image: foodImage, imageAlt: "Mesa mendocina al aire libre con cocina regional",
-    address: "Bröd, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Brod+Bakery+Mendoza",
+    address: "Bröd, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Brod+Bakery+Mendoza", lat: -32.9035910, lng: -68.8459653,
     body: ["Bröd suma una parada de café y panadería al recorrido urbano. Es útil para una pausa breve entre plazas, compras o actividades del centro.", "Como puede haber más de una ubicación o cambios de servicio, revisá la sede y el horario vigente en su canal oficial."],
     tips: ["Confirmá qué sede te queda más cerca.", "Revisá horarios antes de ir temprano.", "Consultá ingredientes si tenés alergias."],
     sourceName: "Bröd · canal oficial", sourceUrl: "https://www.instagram.com/brodbakery/", verified: "11 sep 2026"
@@ -317,7 +319,7 @@ export const content: ContentItem[] = [
     summary: "Una cervecería para sumar una salida informal de noche, con presencia en el corredor gastronómico urbano.",
     category: "Bares y cervecerías", zone: "Gran Mendoza", free: false, cost: "Consumo pago", duration: "1–3 h", editorial: true, ageRestricted: true,
     image: nightlifeImage, imageAlt: "Corredor gastronómico nocturno de inspiración mendocina",
-    address: "Chachingo Craft Beer, Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Chachingo+Craft+Beer+Mendoza",
+    address: "Chachingo Craft Beer, Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Chachingo+Craft+Beer+Mendoza", lat: -33.0448978, lng: -68.7237085,
     body: ["Chachingo es una alternativa para una salida relajada alrededor de la cerveza artesanal y la gastronomía de bar. Antes de ir, elegí la ubicación que mejor encaje con tu recorrido.", "Consultá sedes, horarios, reservas y programación en el canal oficial. La ficha no implica patrocinio."],
     tips: ["Verificá la sede exacta.", "No conduzcas después de consumir alcohol.", "Para grupos, consultá disponibilidad previamente."],
     sourceName: "Chachingo Craft Beer · sitio oficial", sourceUrl: "https://chachingobeer.com/", verified: "11 sep 2026"
@@ -327,7 +329,7 @@ export const content: ContentItem[] = [
     summary: "Una cervecería ubicada en uno de los principales corredores de bares y restaurantes de Mendoza.",
     category: "Bares y cervecerías", zone: "Arístides · Ciudad de Mendoza", free: false, cost: "Consumo pago", duration: "1–3 h", editorial: true, ageRestricted: true,
     image: nightlifeImage, imageAlt: "Corredor gastronómico nocturno de inspiración mendocina",
-    address: "Antares, avenida Arístides Villanueva, Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Antares+Aristides+Mendoza",
+    address: "Antares, avenida Arístides Villanueva, Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Antares+Aristides+Mendoza", lat: -32.8927427, lng: -68.8518267,
     body: ["Esta sede se encuentra sobre Arístides Villanueva, un corredor muy utilizado para salir de noche y recorrer distintas propuestas a pie. Es una referencia simple para ubicarte en la zona.", "La carta, promociones y horarios dependen del local. Verificá la información actual antes de ir."],
     tips: ["La zona tiene alta demanda durante fines de semana.", "Evitá conducir si vas a beber.", "Confirmá reservas para grupos."],
     sourceName: "Cervecería Antares · sitio oficial", sourceUrl: "https://www.cervezaantares.com/", verified: "11 sep 2026"
@@ -337,7 +339,7 @@ export const content: ContentItem[] = [
     summary: "Un mercado tradicional del centro para observar productos, comprar alimentos y comer algo al paso.",
     category: "Mercados", zone: "Ciudad de Mendoza", free: true, cost: "Entrada libre · compras y consumos pagos", duration: "45–90 min", editorial: true,
     image: foodImage, imageAlt: "Mesa mendocina al aire libre con cocina regional",
-    address: "Mercado Central, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Mercado+Central+Mendoza",
+    address: "Mercado Central, Ciudad de Mendoza", mapUrl: "https://www.google.com/maps/search/?api=1&query=Mercado+Central+Mendoza", lat: -32.8851313, lng: -68.8416358,
     body: ["El Mercado Central permite acercarse a la vida cotidiana de la ciudad a través de puestos de alimentos, productos regionales y opciones para comer. La entrada al edificio no exige compra.", "Los horarios pueden variar entre puestos y días. Confirmá la apertura antes de organizar una visita específica."],
     tips: ["La experiencia es mejor durante el horario de actividad comercial.", "Cada puesto maneja sus propios precios y medios de pago.", "Cuidá tus pertenencias en sectores concurridos."],
     sourceName: "Turismo Ciudad de Mendoza", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/", verified: "11 sep 2026"

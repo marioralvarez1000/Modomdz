@@ -20,6 +20,7 @@ export function SiteHeader({viewer}:{viewer:Viewer}) {
           <nav aria-label="Explorar Mendoza">
             <a href="/agenda"><b>Agenda</b><span>Eventos próximos y verificados</span></a>
             <a href="/lugares"><b>Lugares</b><span>Bodegas, gastronomía y paseos</span></a>
+            <a href="/mapa"><b>Mapa</b><span>Todos los lugares en un mapa</span></a>
             <a href="/itinerarios"><b>Recorridos</b><span>Planes listos para seguir</span></a>
             <a href="/guias"><b>Guías útiles</b><span>Movilidad, clima y seguridad</span></a>
             <a href="/gratis"><b>Todo gratis</b><span>Sin entrada ni consumo obligatorio</span></a>
