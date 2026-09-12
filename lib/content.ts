@@ -27,6 +27,7 @@ export type ContentItem = {
   featured?: boolean;
   editorial?: boolean;
   ageRestricted?: boolean;
+  stops?: string[];
 };
 
 const cityImage = "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Downtown_Mendoza.jpg/1280px-Downtown_Mendoza.jpg";
@@ -523,7 +524,8 @@ export const content: ContentItem[] = [
     category: "Paseo a pie", zone: "Ciudad de Mendoza", free: true, cost: "Gratis, sin consumos", duration: "3 h",
     body: ["Empezá en Plaza Independencia y caminá la Peatonal Sarmiento hasta avenida San Martín. Volvé por calles del microcentro hacia Plaza España y terminá en los jardines del Parque Cívico.", "El recorrido prioriza espacios públicos y distancias razonables. Adaptalo al clima, a tu movilidad y al horario del día; no depende de entrar a ningún comercio."],
     tips: ["Inicio: Plaza Independencia.", "Parada media: Plaza España.", "Final: Parque Cívico y regreso por avenida España."],
-    sourceName: "Recorrido editorial Modo MZA basado en cartografía pública", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/", verified: "10 sep 2026", featured: true
+    sourceName: "Recorrido editorial Modo MZA basado en cartografía pública", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/", verified: "10 sep 2026", featured: true,
+    stops: ["plaza-independencia", "peatonal-sarmiento", "plaza-espana", "parque-civico"]
   },
   {
     type: "itinerario", slug: "parque-y-cerro-en-medio-dia", title: "Parque y Cerro en medio día", eyebrow: "Verde + historia",
@@ -531,7 +533,8 @@ export const content: ContentItem[] = [
     category: "Naturaleza", zone: "Ciudad de Mendoza", free: true, cost: "Gratis; traslado opcional aparte", duration: "4 h",
     body: ["Entrá al Parque General San Martín por los Portones, seguí hacia el lago y elegí un sector de sombra para una pausa. Después continuá al Cerro de la Gloria según tu movilidad y el tiempo disponible.", "Las distancias internas son amplias. Si no querés caminar todo, verificá transporte público o combiná con un traslado habilitado."],
     tips: ["Evitá el mediodía en jornadas calurosas.", "Llevá agua desde el inicio.", "No fuerces la subida si hay alerta meteorológica."],
-    sourceName: "Recorrido editorial Modo MZA basado en información oficial", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/", verified: "10 sep 2026"
+    sourceName: "Recorrido editorial Modo MZA basado en información oficial", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/", verified: "10 sep 2026",
+    stops: ["parque-general-san-martin", "cerro-de-la-gloria"]
   },
   {
     type: "itinerario", slug: "historia-de-mendoza-en-una-manana", title: "Historia de Mendoza en una mañana", eyebrow: "Dos ciudades en un recorrido",
@@ -539,7 +542,8 @@ export const content: ContentItem[] = [
     category: "Historia", zone: "Ciudad de Mendoza", free: true, cost: "Paseo exterior gratis; entradas opcionales aparte", duration: "3–4 h",
     body: ["Comenzá en Plaza Pedro del Castillo y observá las ruinas de San Francisco. Después trasladate al trazado de la ciudad nueva y cerrá en Plaza Independencia, centro del diseño posterior al terremoto.", "El hilo del recorrido es urbano e histórico. Los exteriores son públicos; si sumás museos, verificá horarios y tarifas antes de ir."],
     tips: ["Leé primero la ficha del Área Fundacional.", "Usá transporte público entre los dos sectores si querés ahorrar energía.", "Terminá comparando las escalas de ambas plazas."],
-    sourceName: "Recorrido editorial Modo MZA basado en información oficial", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/", verified: "10 sep 2026"
+    sourceName: "Recorrido editorial Modo MZA basado en información oficial", sourceUrl: "https://turismo.ciudaddemendoza.gob.ar/", verified: "10 sep 2026",
+    stops: ["area-fundacional", "plaza-independencia"]
   }
 ];
 
@@ -560,6 +564,11 @@ export function visualFor(item: ContentItem): {src:string;alt:string;credit?:str
 
 export function findContent(type: ContentType, slug: string) {
   return content.find((item) => item.type === type && item.slug === slug);
+}
+
+export function stopsFor(item: ContentItem) {
+  if (!item.stops?.length) return [];
+  return item.stops.map((slug) => findContent("lugar", slug)).filter((stop): stop is ContentItem => Boolean(stop));
 }
 
 export function relatedTo(item: ContentItem, limit = 3) {
